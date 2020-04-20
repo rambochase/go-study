@@ -4,7 +4,7 @@ import(
 	"testing"
 )
 
-//接口定义
+//接口定义(不同的结构体通过实现这样一个接口方法来实现多态)
 type Programmer interface {
 	WriteHelloWorld() string
 }

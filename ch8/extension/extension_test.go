@@ -26,15 +26,21 @@ type Dog struct {
 	p *Pet
 }
 
+//复合基本上都要这样子重写，另外有方法参考extension2内嵌的写法就基本上不用这样写多一次就能拥有父结构体的方法
 func (d *Dog) Speak() {
-	d.p.Speak()
+	//d.p.Speak()
+	fmt.Println("dog wangwang")
 }
 
 func (d *Dog) SpeakTo(host string) {
-	d.p.SpeakTo(host)	
+	d.Speak()
+	fmt.Println("dog speak to ",host)
+	str := fmt.Sprintf("dog speak to %s",host)
+	fmt.Println(str)
+	//d.p.SpeakTo(host)	
 }
 
-func TestDog(t *testing.T) {
+func TestDog(t *testing.T) { 
 	dog := new(Dog)
 	dog.Speak()
 	dog.SpeakTo("ric")
