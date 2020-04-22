@@ -1,17 +1,17 @@
 package benchmark
 
 import (
-	"testing"
 	"bytes"
+	"testing"
 )
 
 func BenchmarkConcatStringByAdd(b *testing.B) {
-	elems := []string{"1","2","rambo","chase","love","peace",",","you know!"}
+	elems := []string{"1", "2", "rambo", "chase", "love", "peace", ",", "you know!"}
 
 	b.ResetTimer()
-	for i := 0; i<b.N; i++ {
+	for i := 0; i < b.N; i++ {
 		ret := ""
-		for _,elem := range elems {
+		for _, elem := range elems {
 			ret += elem
 		}
 	}
@@ -19,11 +19,11 @@ func BenchmarkConcatStringByAdd(b *testing.B) {
 }
 
 func BenchmarkConcatStringByBytesBuffer(b *testing.B) {
-	elems := []string{"1","2","rambo","chase","love","peace",",","you know!"}
+	elems := []string{"1", "2", "rambo", "chase", "love", "peace", ",", "you know!"}
 	b.ResetTimer()
-	for i:=0;i<b.N;i++ {
+	for i := 0; i < b.N; i++ {
 		var buf bytes.Buffer
-		for _,elem := range elems {
+		for _, elem := range elems {
 			buf.WriteString(elem)
 		}
 	}
