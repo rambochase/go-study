@@ -12,10 +12,12 @@ import (
 	"strconv"
 )
 
+var counter int = 0
 func main() {
 	http.HandleFunc("/", sayHello)
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/upload",upload)
+	http.HandleFunc("/count",Counter)
 	err := http.ListenAndServe(":8081", nil) //监听端口，并且接收请求
 	if err != nil {
 		log.Fatal("ListenAndServe", err)
@@ -77,4 +79,9 @@ func upload(p http.ResponseWriter,r *http.Request) {
 		defer f.Close()
 		io.Copy(f,file)
 	}
+}
+
+func Counter(p http.ResponseWriter,r *http.Request) {
+	counter++
+	fmt.Fprintf(p,strconv.Itoa(counter))
 }
