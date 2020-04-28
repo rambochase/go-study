@@ -5,6 +5,7 @@ Author: Ric
 资料：
 * [web编程](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md?from=singlemessage&isappinstalled=0)
 * [go数据结构](https://research.swtch.com/godata)
+* [go文档](https://studygolang.com/pkgdoc)
 * [实效go编程](https://go-zh.org/doc/effective_go.html)
 * [go项目实践](https://github.com/astaxie/go-best-practice/blob/master/ebook/zh/preface.md)
 * [go入门](http://c.biancheng.net/golang/)
