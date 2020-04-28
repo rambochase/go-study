@@ -100,7 +100,7 @@ func (s *NewScheduler) Idle() bool {
 	return true
 }
 
-func (s *NewScheduler) ummary() SchedSummary {
+func (s *NewScheduler) Summary() SchedSummary {
 	
 }
 

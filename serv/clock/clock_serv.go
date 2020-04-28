@@ -31,6 +31,7 @@ func handleConn(c net.Conn) {
 	for {
 		_,err := io.WriteString(c,time.Now().Format("15:04:05\n"))
 		if err != nil {
+			fmt.Println("connect is interrupt....")
 			return  //e.g:
 		}
 		time.Sleep(time.Second * 1)
